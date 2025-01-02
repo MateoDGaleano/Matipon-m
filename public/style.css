@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Gravitas+One&family=Oi&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+    font-family: "Grandstander", cursive;
+    background-color: #405D72;
+}
+
+
+#select_mati{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title {
+    color: #48d0ff99;
+    font-family: Gravitas One;
+    font-size: 48px;
+    
+}
+
+.subtitle{
+    color: #7AB2D3;
+    font-size: 32px;
+}
+
+.targets, .divAttacks{
+    display: flex;
+    gap: 24px;
+}
+
+.matipon-target{
+    width: 212px;
+    height: 160px;
+    background: #F7E7DC;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #025383;
+    cursor: pointer;
+
+}
+
+/* .matipon-target:hover{
+    cursor: pointer;
+} */
+
+.matipon-target img{
+    width: 84px;
+    height: 100px;
+
+}
+
+
+#button-Mati{
+    display: flex;
+    width: 150px;
+    height: 40px;
+    background: rgb(78, 118, 116);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 3px solid #FFF8F3;
+    color: #fdfdfd;
+    font-family: "Poppins", sans-serif;
+    margin-top: 10px;
+    cursor: pointer;
+    
+}
+
+#button-Mati:hover{
+    background-color: #6492d3;
+}
+
+
+
+input{
+    display: none
+}
+
+input:checked + label{
+    background-image:linear-gradient(rgb(162, 156, 246),rgb(234, 175, 175));    
+    border: 5px solid rgb(157, 243, 190); 
+   
+}
+ 
+#select_attack{
+    /* no se puso el display: flex porque quedo indicado en js, entonces fue innecesario agregarlo */
+    flex-direction: column;
+    align-items: center;
+}
+
+.attacks-btn{
+    background-color:#025383 ;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border-color: transparent;
+    width: 120px;
+    color: #F7E7DC;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+}
+
+#button-candela:hover{
+    background-color: #f4a169;
+    border: 5px solid #d46e2a;
+}
+#button-water:hover{
+    background-color: #6297e7;
+    border: 5px solid #1353b4;
+}
+#button-mojon:hover{
+    background-color: #79390e;
+    border: 5px solid #4c1f01;
+}
+
+
+
+#messages{
+    width: 300px;
+    background: #31768473;
+    padding: 20px;
+    margin-top: 32px;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#Restart{
+    border: none;
+    cursor: pointer;
+    
+}
+
+.attacks{
+    display: grid;
+    grid-template-columns: 100px 100px;
+    text-align: center;
+    gap: 80px;
+}
+
+
+/* esta es una forma pero yo lo hice con el text-align: center en la clase de .attacks que está arriba, tons da lo mismo */
+/* .attacks-player, .attacks-pc{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#view-map{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#view-map button {
+    width: 80px;
+    height: 40px;
+    background: rgb(78, 118, 116);
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 3px solid #FFF8F3;
+    color: #fdfdfd;
+    font-family: "Poppins", sans-serif;
+    margin: 10px 0;
+    cursor: pointer;
+}
+.audios{
+    display: none;
+}
+
+
+
+@media (max-width: 580px){
+    .targets, .divAttacks{
+        display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center; 
+    column-gap: 15px;
+    row-gap: 15px;
+;
+    }
+    .title, .subtitle{
+        display: flex;
+        text-align: center;
+    }
+}
+
+@media (max-width: 300px){
+    #view-map div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+    }
+}

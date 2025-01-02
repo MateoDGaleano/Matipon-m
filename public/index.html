@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matipon</title>
+    <link rel="icon" href="./imagenes/logoMatiponLindo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+
+
+    
+</head>
+<body>  
+        <!-- name-mati-playere hacen diferentes sections para separar todo mejor -->
+        <section id="select_mati">
+            <h1 class="title" >EL MATIPON 😼</h1>
+
+
+            <h2 class="subtitle">Take ur mati:</h2><br>
+
+            <div id='targetsContainer' class="targets">
+
+                
+
+            <!-- <input type="radio" name="pet" id="Elmatipro"/>
+            <label class="matipon-target" for="Elmatipro">
+                <p>Elmatipro  </p>
+                <img src="./Imagenes/ElmatiproCuadrado.png" alt="Elmatipro">
+            </label> <br><br> -->
+            
+            <!-- <input type="radio" name="pet" id="Elmatiexe"/>
+            <label class="matipon-target" for="Elmatiexe">
+                <p>Elmatiexe  </p>
+                <img src="./Imagenes/elmatiexeCuadrado.png" alt="Elmatiexe">                
+            </label> <br><br>
+            
+            <input type="radio" name="pet" id="Elmatinub"/>
+            <label class="matipon-target" for="Elmatinub">
+                <p>Elmatinub  </p>
+                <img src="./Imagenes/ElmatinubCuadrado.png" alt="Elmatinub">               
+            </label> <br><br> -->
+            <!-- Se borraron estas vainas pq se puso el template en js, con un foreach en la funcion startMatipon -->
+
+            </div>
+
+            <!-- Ahora las mascotas y sus ataques, los matis -->
+             <!-- Los imputs de tipo radio no deja quitar la seleccion y los de checkbox si deja cambiar -->
+              <!-- Los labels son para indicar a los usuarios que están usando ellos, el name es importante para que se pueda elegir solo una opcion dentro de las opciones con el mismo name, y el label es para que se pueda seleccionar al undir en el nombre ademas del boton chiquitico -->
+
+            
+
+            <!-- Esta otra forma de elegir en ves de radio -->
+                <!-- <select> 
+                    <optgroup label="Candela">
+                        <option id="Elmatipro">Elmatipro</option>
+                    </optgroup>
+                    
+                    <optgroup label="Water">
+                        <option id="Elmatiexe">Elmatiexe </option>
+                    </optgroup>
+
+                    <optgroup label="Mojon">
+                        <option id="Elmatinub">Elmatinub</option>
+                    </optgroup>
+                </select> -->
+            
+
+            <button id="button-Mati">Select</button>
+
+                <audio class="audios" id="audioMatipro" controls>
+                    <source type="audio/wav" src="Sounds/elmatipro_audio.wav">
+                </audio>
+
+                <audio class="audios" id="audioMatiexe" controls>
+                    <source type="audio/wav" src="Sounds/elmatiexe_audio.wav">
+                </audio>
+
+                <audio class="audios" id="audioMatinub" controls>
+                    <source type="audio/wav" src="Sounds/elmatinub_audio.wav">
+                </audio>
+
+                <audio class="audios" id="audioMatigranjero" controls>
+                    <source type="audio/wav" src="Sounds/elmatigranjero_audio.wav">
+                </audio>
+
+                <audio class="audios" id="audioMatiamoroso" controls>
+                    <source type="audio/wav" src="Sounds/elmatiamoros_audio.wav">
+                </audio>
+
+                <audio class="audios" id="audioMatichill" controls>
+                    <source type="audio/wav" src="Sounds/elmatichill_audio.wav">
+                </audio>
+
+        </section>
+
+        <section id="view-map">
+
+            <h2 class="subtitle">Explore the map with ur matipon</h2>
+            <canvas id="map"></canvas>
+            <button id="btnUp" ontouchend="stopMoving()" o onmouseup="stopMoving()" onmouseout="stopMoving()" onmousedown="moveUp()" ontouchstart="moveUp()" >↑</button> 
+            <div>
+                <button id="btnLeft"  ontouchend="stopMoving()" onmouseup="stopMoving()" onmouseout="stopMoving()" onmousedown="moveLeft()" ontouchstart="moveLeft()" >←</button> 
+                <button id="btnDown"  ontouchend="stopMoving()" onmouseup="stopMoving()" onmouseout="stopMoving()" onmousedown="moveDown()" ontouchstart="moveDown()"  >↓</button> 
+                <button id="btnRight" ontouchend="stopMoving()" onmouseup="stopMoving()" onmouseout="stopMoving()" onmousedown="moveRight()" ontouchstart="moveRight()" >→</button>
+            </div>
+            
+        </section>
+
+        <section id="select_attack">
+            <h1 class="title" >EL MATIPON 😼</h1>
+
+            <h2 class="subtitle">Take ur attack:</h2>
+            
+            <div id="attacksContainer" class="divAttacks">
+                <!-- <button id="button-candela" class="attacks-btn">Candela 🔥</button>
+                <button id="button-water" class="attacks-btn">Water 💦 </button>
+                <button id="button-mojon" class="attacks-btn">Mojon 💩 </button> -->
+            </div>
+            
+            
+                <div id="messages">
+                    <p id="resultado">¿Qué mati vencerá?</p>
+
+                    <section id="Restart">
+                        <!-- <button id="button-restart">Restart</button> -->
+                    </section>
+                </div>
+
+                
+    
+                <!-- Abajo se paso de 3 a 0, porque ya no eran vidas sino victorais, si quieres cambia el nombre -->
+            <div class="attacks">
+                <div class="attacks-player">
+                    <p id="lives-mati-player">0</p>  
+                    <p id="name-mati-player"></p>
+                    <div id="player-Attacks"></div>
+                    
+                </div>
+                <div class="attacks-pc">
+                    <p id="lives-mati-pc">0</p> 
+                    <p id="name-mati-pc"></p>
+                    <div id="pc-Attacks"></div>    
+                </div>
+            </div>
+
+        </section>  
+
+        <script src="./matipon.js"></script>
+</body>
+</html>
+
